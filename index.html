@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FCC Technical Documentation Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Slab|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex-container">
+        <nav id="navbar">
+            <header>
+                <h1>Python Documentation</h1>
+                <ul>
+                    <li><a href="#an_informal_introduction_to_python" class="nav-link">An Informal Introduction to Python</a></li>
+                    <li><a href="#more_control_flow_tools" class="nav-link">More Control Flow Tools</a></li>
+                    <li><a href="#data_structures" class="nav-link">Data Structures</a></li>
+                    <li><a href="#modules" class="nav-link">Modules</a></li>
+                    <li><a href="#input_and_output" class="nav-link">Input and Output</a></li>
+                </ul>
+            </header>
+        </nav>
+        <main id="main-doc">
+            <section id="an_informal_introduction_to_python" class="main-section">
+                <header>
+                    <h2>An Informal Introduction to Python</h2>
+                </header>
+                <p>In the following examples, input and output are distinguished by the presence or absence of prompts (>>> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
+                <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
+                <p>Some examples:</p>
+                <pre>
+                    <code>
+    # this is the first comment
+    spam = 1  # and this is the second comment
+            # ... and now a third!
+    text = "# This is not a comment because it's inside quotes."
+                    </code>
+                </pre>
+            </section>
+            <section id="more_control_flow_tools" class="main-section">
+                <header>
+                    <h2>More Control Flow Tools</h2>
+                </header>
+                <p>Besides the <code>while</code> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
+                <h3><code>if</code> Statements</h3>
+                <p>Perhaps the most well-known statement type is the <code>if</code> statement. For example:</p>
+                <pre>
+                    <code>
+    >>> x = int(input("Please enter an integer: "))
+    Please enter an integer: 42
+    >>> if x < 0:
+    ...     x = 0
+    ...     print('Negative changed to zero')
+    ... elif x == 0:
+    ...     print('Zero')
+    ... elif x == 1:
+    ...     print('Single')
+    ... else:
+    ...     print('More')
+    ...
+    More
+                    </code>
+                </pre>
+                <p>There can be zero or more <code>elif</code> parts, and the <code>else</code> part is optional. The keyword ‘<code>elif</code>’ is short for ‘else if’, and is useful to avoid excessive indentation. An <code>if</code> … <code>elif</code> … <code>elif</code> … sequence is a substitute for the <code>switch</code> or <code>case</code> statements found in other languages.</p>
+            </section>
+            <section id="data_structures" class="main-section">
+                <header>
+                    <h2>Data Structures</h2>
+                </header>
+                <p>This chapter describes some things you’ve learned about already in more detail, and adds some new things as well.</p>
+                <h3>More on Lists</h3>
+                <p>The list data type has some more methods. Here are all of the methods of list objects:</p>
+                <ul>
+                    <li><code>list.<b>append</b>(<i>x</i>)</code></li>
+                    <li><code>list.<b>extend</b>(<i>iterable</i>)</code></li>
+                    <li><code>list.<b>insert</b>(<i>i, x</i>)</code></li>
+                    <li><code>list.<b>remove</b>(<i>x</i>)</code></li>
+                    <li><code>list.<b>pop</b>([<i>i</i>])</code></li>
+                </ul>
+                <p>You might have noticed that methods like insert, remove or sort that only modify the list have no return value printed – they return the default None. [1] This is a design principle for all mutable data structures in Python.</p>
+            </section>
+            <section id="modules" class="main-section">
+                <header>
+                    <h2>Modules</h2>
+                </header>
+                <p>If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a script. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you’ve written in several programs without copying its definition into each program.</p>
+                <p>To support this, Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module; definitions from a module can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level and in calculator mode).</p>
+                <p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix <code>.py</code> appended. Within a module, the module’s name (as a string) is available as the value of the global variable <code>__name__</code>. For instance, use your favorite text editor to create a file called <code>fibo.py</code> in the current directory with the following contents:</p>
+                <pre>
+                    <code>
+    # Fibonacci numbers module
+
+    def fib(n):    # write Fibonacci series up to n
+        a, b = 0, 1
+        while a < n:
+            print(a, end=' ')
+            a, b = b, a+b
+        print()
+
+    def fib2(n):   # return Fibonacci series up to n
+        result = []
+        a, b = 0, 1
+        while a < n:
+            result.append(a)
+            a, b = b, a+b
+        return result
+                    </code>
+                </pre>
+            </section>
+            <section id="input_and_output" class="main-section">
+                <header>
+                    <h2>Input and Output</h2>
+                </header>
+                <p>There are several ways to present the output of a program; data can be printed in a human-readable form, or written to a file for future use. This chapter will discuss some of the possibilities.</p>
+                <h3>Fancier Output Formatting</h3>
+                <p>So far we’ve encountered two ways of writing values: expression statements and the <code>print()</code> function. (A third way is using the <code>write()</code> method of file objects; the standard output file can be referenced as <code>sys.stdout</code>. See the Library Reference for more information on this.)</p>
+                <p>Often you’ll want more control over the formatting of your output than simply printing space-separated values. There are several ways to format output.</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>HTML and CSS copyright &copy; 2019 Evan Fetherolf.</p>
+        <p>Python documentation copyright &copy; 2001-2019 Python Software Foundation.</p>
+        <p>This page was created as a part of the <a href="#" target="_blank">Free Code Camp</a> curriculum and is for education purposes only. It is NOT intended to be an actual reference for the Python language. <a href="https://docs.python.org/3/index.html" target="_blank">For the actual Python documentation, click here.</a></p>
+    </footer>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

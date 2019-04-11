@@ -1,0 +1,128 @@
+/* ******************************
+ *
+ * Global Styles
+ *
+ * ****************************** */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.6rem;
+    line-height: 1.6
+}
+
+.flex-container {
+    display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+    margin-left: 1.5rem;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+/* ******************************
+ *
+ * Navigation Styles
+ *
+ * ****************************** */
+
+nav {
+    padding: 1rem 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+}
+
+/* ******************************
+ *
+ * Main Styles
+ *
+ * ****************************** */
+
+section {
+    margin-bottom: 6rem;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+section header {
+    background-color:#4b8bbe;
+    color: #fff;
+    padding: 1.5rem;
+}
+
+section p {
+    padding: 1.5rem;
+    width: 45em;
+}
+
+section ul {
+    margin-left: 6rem;
+}
+
+pre {
+    background-color: #eee;
+    display: inline-block;
+    margin: 1.5rem 0 1.5rem 5rem;
+    max-width: 50em;
+    padding: 0 2rem;
+}
+
+/* ******************************
+ *
+ * Footer Styles
+ *
+ * ****************************** */
+
+footer {
+    margin: 2rem auto;
+    text-align: center;
+    width: 80%;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    width: 55em;
+}
